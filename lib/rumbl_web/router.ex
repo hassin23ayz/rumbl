@@ -17,6 +17,12 @@ defmodule RumblWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    #: from rumble_web/endpoint.ex we have come here
+    #: Adding a new Route
+    #: HTTP requests [verb/path] matching happens here
+    get "/hello", HelloController, :index
+    #: From here we go to rumble_web/controllers/hello_controller.ex
   end
 
   # Other scopes may use custom stacks.
