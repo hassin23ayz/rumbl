@@ -1,3 +1,6 @@
+#: responsible for dispatching verb/path to controllers
+#: allows us to scope functionality
+
 defmodule RumblWeb.Router do
   use RumblWeb, :router
 

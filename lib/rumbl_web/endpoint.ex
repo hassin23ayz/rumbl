@@ -1,3 +1,5 @@
+#: All HTTP requests start in our Application endpoint
+#: Each of the plugs has a specific responsbility
 defmodule RumblWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :rumbl
 
@@ -50,5 +52,7 @@ defmodule RumblWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+
+  #: allows the endpoint to delegate all further request processing to the router
   plug RumblWeb.Router
 end

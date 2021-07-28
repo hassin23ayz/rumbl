@@ -1,5 +1,6 @@
 #: from rumble_web/router.ex we have come here
 #: Here in controller layer Actions of HTTP req[verb/path] takes place
+#: From this layer we talk to buisnedd domain code aka Model
 
 defmodule RumblWeb.HelloController do
   use RumblWeb, :controller
