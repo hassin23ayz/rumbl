@@ -1,5 +1,5 @@
 #: responsible for dispatching verb/path to controllers
-#: allows us to scope functionality
+#: allows us to scope functionality, e.g some pages may require authentication
 
 defmodule RumblWeb.Router do
   use RumblWeb, :router
@@ -25,7 +25,11 @@ defmodule RumblWeb.Router do
     #: Adding a new Route
     #: HTTP requests [verb/path] matching happens here
     get "/hello", HelloController, :index
-    #: From here we go to rumble_web/controllers/hello_controller.ex
+    #: From here we go to rumble_web/controllers/hello_controller.ex index() action function
+
+    #: adding a new [verb/path] capable of passing variable
+    get "/hello/:stranger", HelloController, :show
+    #: From here we go to rumble_web/controllers/hello_controller.ex show() action function
   end
 
   # Other scopes may use custom stacks.

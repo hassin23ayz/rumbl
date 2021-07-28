@@ -12,4 +12,10 @@ defmodule RumblWeb.HelloController do
     render(conn, "hello.html")
     #: From here we go to rumble_web/views/hello_view.ex
   end
+
+  #: keys to the params map is always strings
+  #: extract the stranger from the params & pass to template
+  def show(conn, %{"stranger" => stranger}) do
+    render(conn, "show.html", stranger: stranger)
+  end
 end
