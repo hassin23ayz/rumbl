@@ -16,8 +16,9 @@ defmodule RumblWeb.Router do
     plug :accepts, ["json"]
   end
 
+  #: this grp of routes will attempt to match all routes beginning with /
   scope "/", RumblWeb do
-    pipe_through :browser
+    pipe_through :browser  #: handles some house keeping for all common browser style requests
 
     get "/", PageController, :index
 
@@ -27,8 +28,9 @@ defmodule RumblWeb.Router do
     get "/hello", HelloController, :index
     #: From here we go to rumble_web/controllers/hello_controller.ex index() action function
 
-    #: adding a new [verb/path] capable of passing variable
-    get "/hello/:stranger", HelloController, :show
+    #: adding a new route (dynamic) [verb/path] capable of passing variable
+    #: the : of :name tells Phx to create a parameter named :name in our route and pass that as a parameter to the controller
+    get "/hello/:name", HelloController, :show
     #: From here we go to rumble_web/controllers/hello_controller.ex show() action function
   end
 
