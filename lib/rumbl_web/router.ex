@@ -34,7 +34,7 @@ defmodule RumblWeb.Router do
     #: From here we go to rumble_web/controllers/hello_controller.ex show() action function
 
     get "/users",      UserController, :index
-    get "/users/:id",  UserController, :show
+    get "/users/:id",  UserController, :show  #index.html.eex will route back and make this GET request
   end
 
   # Other scopes may use custom stacks.

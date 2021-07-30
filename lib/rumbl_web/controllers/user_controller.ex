@@ -10,5 +10,8 @@ defmodule RumblWeb.UserController do
     #: From here we go to rumble_web/views/user_view.ex
   end
 
-  def show(conn, ) do
+  def show(conn, %{"id" => id}) do
+    user = Repo.get(User, id)
+    render(conn, "show.html", user: user)
+  end
 end
