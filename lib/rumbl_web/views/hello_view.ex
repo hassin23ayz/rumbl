@@ -1,4 +1,5 @@
 #: From rumbl_web/controllers/hello_controller.ex we have come here
+# views are modules responsible for rendering
 defmodule RumblWeb.HelloView do
   use RumblWeb, :view
   #: now we need to go to rumbl_web/templates directory and

@@ -32,6 +32,9 @@ defmodule RumblWeb.Router do
     #: the : of :name tells Phx to create a parameter named :name in our route and pass that as a parameter to the controller
     get "/hello/:name", HelloController, :show
     #: From here we go to rumble_web/controllers/hello_controller.ex show() action function
+
+    get "/users",      UserController, :index
+    get "/users/:id",  UserController, :show
   end
 
   # Other scopes may use custom stacks.
